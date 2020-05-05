@@ -3,7 +3,7 @@
 
 A package for giving reviews for the things
 
-<img src="https://github.com/buraktabn/give-star-reviews/raw/master/images/img0.gif" />
+<img src="https://github.com/buraktabn/give-star-reviews/raw/master/images/img0.gif" width="200" />
 
 ## Getting Started
 
