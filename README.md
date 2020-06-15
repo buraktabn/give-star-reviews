@@ -1,5 +1,5 @@
 
-# givestarreviews
+# give-star-reviews
 
 A package for giving reviews for the things
 
@@ -26,9 +26,9 @@ Multiple
 ```dart
 GiveStarReviews(
   starData: [
-  GiveStarData(text: 'Review 1', onChanged: (rate) {}),
-  GiveStarData(text: 'Review 2', onChanged: (rate) {}),
-  GiveStarData(text: 'Review 3', onChanged: (rate) {}),
+    GiveStarData(text: 'Review 1', onChanged: (rate) {}),
+    GiveStarData(text: 'Review 2', onChanged: (rate) {}),
+    GiveStarData(text: 'Review 3', onChanged: (rate) {}),
  ],
 ),
 ```
