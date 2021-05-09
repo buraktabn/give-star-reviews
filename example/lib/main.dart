@@ -55,8 +55,7 @@ class Home extends StatelessWidget {
   }
 
   void _showToast(BuildContext context, String txt) {
-    final scaffold = Scaffold.of(context);
-    scaffold.showSnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         duration: Duration(milliseconds: 500),
         content: Text(txt),
