@@ -9,7 +9,7 @@ A package for giving reviews for the things
 
 ```yaml
 dependencies:
-  givestarreviews: ^1.0.0
+  givestarreviews: ^1.0.1
 ```
 
 ```console
