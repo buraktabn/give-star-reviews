@@ -1,6 +1,6 @@
 name: givestarreviews
 description: A package for giving reviews for the things
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/buraktabn/give-star-reviews
 
 environment:
