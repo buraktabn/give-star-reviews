@@ -26,6 +26,7 @@ class GiveStarReviews extends StatelessWidget {
           ),
           StarRating(
             value: x.value,
+            starCount: x.starCount,
             onChanged: x.onChanged,
             filledStar: x.filledStar,
             unfilledStar: x.unfilledStar,
@@ -52,10 +53,11 @@ class GiveStarReviews extends StatelessWidget {
 }
 
 class StarRating extends StatefulWidget {
-  final void Function(int index) onChanged;
+  final void Function(int index)? onChanged;
   final int? value;
   final IconData? filledStar;
   final IconData? unfilledStar;
+  final int starCount;
   final double size;
   final double spaceBetween;
   final Color activeStarColor;
@@ -63,8 +65,9 @@ class StarRating extends StatefulWidget {
 
   StarRating(
       {Key? key,
-      required this.onChanged,
+      this.onChanged,
       this.value = 0,
+      this.starCount = 5,
       this.filledStar,
       this.unfilledStar,
       this.spaceBetween = 5,
@@ -91,13 +94,15 @@ class _StarRatingState extends State<StarRating> {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
-      children: List.generate(5, (index) {
+      children: List.generate(widget.starCount, (index) {
         return GestureDetector(
           onTap: () {
-            setState(() {
-              value = value == index + 1 ? index : index + 1;
-            });
-            widget.onChanged(value);
+            if (widget.onChanged != null) {
+              setState(() {
+                value = value == index + 1 ? index : index + 1;
+              });
+              widget.onChanged!.call(value);
+            }
           },
           child: Container(
             padding: EdgeInsets.only(left: index == 0 ? 0 : widget.spaceBetween),
@@ -116,8 +121,9 @@ class _StarRatingState extends State<StarRating> {
 class GiveStarData {
   final String text;
   final TextStyle? textStyle;
-  final void Function(int index) onChanged;
+  final void Function(int index)? onChanged;
   final int value;
+  final int starCount;
   final IconData? filledStar;
   final IconData? unfilledStar;
   final double size;
@@ -127,9 +133,10 @@ class GiveStarData {
 
   GiveStarData(
       {required this.text,
-      required this.onChanged,
+      this.onChanged,
       this.textStyle,
       this.value = 0,
+      this.starCount = 5,
       this.filledStar,
       this.unfilledStar,
       this.size = 25,

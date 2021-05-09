@@ -47,6 +47,28 @@ class Home extends StatelessWidget {
                           }),
                     ],
                   ),
+                  SizedBox(height: 24),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Read only'),
+                      StarRating(value: 2),
+                    ],
+                  ),
+                  SizedBox(height: 24),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('7 Starts'),
+                      StarRating(
+                        value: 2,
+                        starCount: 7,
+                        onChanged: (rate) {
+                          _showToast(context, rate.toString());
+                        },
+                      ),
+                    ],
+                  )
                 ],
               )),
         ),
