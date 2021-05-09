@@ -13,3 +13,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -   Migrate to Null-Safety
+
+## 1.0.2 - 2021-05-09
+
+### Added
+
+-   More than 5 stars
+-   Read only option

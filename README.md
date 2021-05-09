@@ -9,7 +9,7 @@ A package for giving reviews for the things
 
 ```yaml
 dependencies:
-  givestarreviews: ^1.0.0
+  givestarreviews: ^1.0.2
 ```
 
 ```console
@@ -27,8 +27,8 @@ Multiple
 GiveStarReviews(
   starData: [
     GiveStarData(text: 'Review 1', onChanged: (rate) {}),
-    GiveStarData(text: 'Review 2', onChanged: (rate) {}),
-    GiveStarData(text: 'Review 3', onChanged: (rate) {}),
+    GiveStarData(text: 'Review 2', onChanged: null),
+    GiveStarData(text: 'Review 3', starCount: 3, onChanged: (rate) {}),
  ],
 ),
 ```
@@ -36,6 +36,8 @@ Single
 ```dart
 StarRating(onChanged: (rate) {}),
 ```
+
+To make a read only `StarRating`, simply set the `onChanged` to null or leave empty. 
 
 ## Contributions
 
